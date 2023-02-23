@@ -4,7 +4,8 @@
   "description": "A social media API where users can share their thoughts, react to friends’ thoughts, and create a friend list.",
   "main": "server.js",
   "scripts": {
-    "test": "NA"
+    "test": "NA", 
+    "start": "node index"
   },
   "repository": {
     "type": "git",
