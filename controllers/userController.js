@@ -48,9 +48,10 @@ module.exports = {
   async addNewFriend(req, res) {
     await User.findOneAndUpdate(
         { _id: req.params.userId }, 
-        { $addToSet: {friends: req.body } }, 
-        { runValidators: true, new: true }
+        { $addToSet: {friends: req.params.friendId } }, 
+        { new: true }
     )
+    // .then(console.log(friendId, userId))
     .then((user) => 
       !user
         ? res.status(404).json({ message: 'No user with this id!' })

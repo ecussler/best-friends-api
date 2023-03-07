@@ -6,3 +6,4 @@ mongoose.connect('mongodb://localhost/bestfriendsDB', {
 });
 
 module.exports = mongoose.connection;
+

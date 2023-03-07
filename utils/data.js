@@ -1,72 +1,72 @@
-const names = [
-    'Aaran',
-    'Aaren',
-    'Aarez',
-    'Aarman',
-    'Aaron',
-    'Aaron-James',
-    'Aarron',
-    'Aaryan',
-    'Aaryn',
-    'Aayan',
-    'Aazaan',
-    'Abaan',
-    'Abbas',
-    'Abdallah',
-    'Abdalroof',
-    'Abdihakim',
-    'Abdirahman',
-    'Abdisalam',
-    'Abdul',
-    'Abdul-Aziz',
-    'Abdulbasir',
-    'Abdulkadir',
-    'Abdulkarem',
-    'Smith',
-    'Jones',
-    'Coollastname',
-    'enter_name_here',
-    'Ze',
-    'Zechariah',
-    'Zeek',
-    'Zeeshan',
-    'Zeid',
-    'Zein',
-    'Zen',
-    'Zendel',
-    'Zenith',
-    'Zennon',
-    'Zeph',
-    'Zerah',
-    'Zhen',
-    'Zhi',
-    'Zhong',
-    'Zhuo',
-    'Zi',
-    'Zidane',
-    'Zijie',
-    'Zinedine',
-    'Zion',
-    'Zishan',
-    'Ziya',
-    'Ziyaan',
-    'Zohaib',
-    'Zohair',
-    'Zoubaeir',
-    'Zubair',
-    'Zubayr',
-    'Zuriel',
-    'Xander',
-    'Jared',
-    'Grace',
-    'Alex',
-    'Mark',
-    'Tamar',
-    'Farish',
-    'Sarah',
-    'Nathaniel',
-    'Parker',
-  ];
+// const names = [
+//     'Aaran',
+//     'Aaren',
+//     'Aarez',
+//     'Aarman',
+//     'Aaron',
+//     'Aaron-James',
+//     'Aarron',
+//     'Aaryan',
+//     'Aaryn',
+//     'Aayan',
+//     'Aazaan',
+//     'Abaan',
+//     'Abbas',
+//     'Abdallah',
+//     'Abdalroof',
+//     'Abdihakim',
+//     'Abdirahman',
+//     'Abdisalam',
+//     'Abdul',
+//     'Abdul-Aziz',
+//     'Abdulbasir',
+//     'Abdulkadir',
+//     'Abdulkarem',
+//     'Smith',
+//     'Jones',
+//     'Coollastname',
+//     'enter_name_here',
+//     'Ze',
+//     'Zechariah',
+//     'Zeek',
+//     'Zeeshan',
+//     'Zeid',
+//     'Zein',
+//     'Zen',
+//     'Zendel',
+//     'Zenith',
+//     'Zennon',
+//     'Zeph',
+//     'Zerah',
+//     'Zhen',
+//     'Zhi',
+//     'Zhong',
+//     'Zhuo',
+//     'Zi',
+//     'Zidane',
+//     'Zijie',
+//     'Zinedine',
+//     'Zion',
+//     'Zishan',
+//     'Ziya',
+//     'Ziyaan',
+//     'Zohaib',
+//     'Zohair',
+//     'Zoubaeir',
+//     'Zubair',
+//     'Zubayr',
+//     'Zuriel',
+//     'Xander',
+//     'Jared',
+//     'Grace',
+//     'Alex',
+//     'Mark',
+//     'Tamar',
+//     'Farish',
+//     'Sarah',
+//     'Nathaniel',
+//     'Parker',
+//   ];
 
 const possibleThoughts = [
     'I would ask for that in writing but then I would lose the satisfaction of not understanding it.',
@@ -94,69 +94,66 @@ const possibleThoughts = [
     'I hate Sundays', 
   ]; 
 
-const possibleReactions = [
-    'Like', 
-    'Dislike', 
-    'Love', 
-    'Angry', 
-    'Sad', 
-    'Laugh'
-  ]; 
+// const possibleReactions = [
+//     'Like', 
+//     'Dislike', 
+//     'Love', 
+//     'Angry', 
+//     'Sad', 
+//     'Laugh'
+//   ]; 
   
 const genRandomIndex = (array) => Math.floor(Math.random() * array.length); 
 
-const genUsername = () => `${names[genRandomIndex(names)]}`; 
-
-const genEmail = () => `${names[genRandomIndex(names)]}@email.com`; 
 
 const seedUsers = () => {
     const users = []; 
-    for (let i=0; i<10; i++) {
-        users.push({
-            username: names[i], 
-            email: `${names[i]}@email.com`
-        })
-    }; 
+    users.push([
+        { username: "Rachel", email: "rachelgreen@friends.com"}, 
+        { username: "Ross", email: "rossgellar@friends.com"}, 
+        { username: "Monica", email: "monicagellar@friends.com"}, 
+        { username: "Chandler", email: "chandlerbing@friends.com"}, 
+        { username: "Phoebe", email: "phoebebuffary@friends.com"}, 
+        { username: "Joey", email: "joeytribbiani@friends.com"},  
+    ]);
     return users; 
-}
+};
 
 const genThought = () => `${possibleThoughts[genRandomIndex(possibleThoughts)]}`; 
-const genReactions = () => `${possibleReactions[genRandomIndex(possibleReactions)]}`; 
+// const genReactions = () => `${possibleReactions[genRandomIndex(possibleReactions)]}`; 
 
-// const genReactions = (int) => {
+// // const genReactions = (int) => {
+// //     if (int === 1) {
+// //         return genRandomIndex(possibleReactions); 
+// //     }
+// //     let results = []; 
+// //     for (let i=0; i < int; i++) {
+// //         results.push({
+// //             reactionBody: genRandomIndex(possibleReactions), 
+// //             username: genUsername(), 
+// //         })
+// //     }
+// //     return results; 
+// // }; 
+
+// const genFriends = (int) => {
 //     if (int === 1) {
-//         return genRandomIndex(possibleReactions); 
+//         return genRandomIndex(names); 
 //     }
 //     let results = []; 
 //     for (let i=0; i < int; i++) {
 //         results.push({
-//             reactionBody: genRandomIndex(possibleReactions), 
-//             username: genUsername(), 
+//             username: genRandomIndex(names), 
 //         })
 //     }
 //     return results; 
-// }; 
-
-const genFriends = (int) => {
-    if (int === 1) {
-        return genRandomIndex(names); 
-    }
-    let results = []; 
-    for (let i=0; i < int; i++) {
-        results.push({
-            username: genRandomIndex(names), 
-        })
-    }
-    return results; 
-};
+// };
 
 module.exports = {
-    genRandomIndex, 
-    genUsername, 
-    genEmail, 
+    // genRandomIndex, 
     genThought, 
-    genReactions, 
-    genFriends, 
+    // genReactions, 
+    // genFriends, 
     seedUsers
 }; 
 

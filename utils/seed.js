@@ -1,6 +1,6 @@
 const connection = require('../config/connection'); 
-const { User, Thought, Reaction } = require('../models'); 
-const { genRandomIndex, genUsername, genEmail, genThought, genReactions, genFriends, seedUsers } = require('./data'); 
+const { User, Thought } = require('../models'); 
+const { genRandomIndex, genThought, genReactions, genFriends, seedUsers } = require('./data'); 
 
 connection.on('error', (err) => err); 
 
@@ -8,28 +8,34 @@ connection.once('open', async () => {
     console.log('connected'); 
     await User.deleteMany({}); 
     await Thought.deleteMany({}); 
-    const users = await User.insertMany(seedUsers()); 
-    console.log(users); 
+    await User.collection.insertMany([
+        { username: "Rachel", email: "rachelgreen@friends.com"}, 
+        { username: "Ross", email: "rossgellar@friends.com"}, 
+        { username: "Monica", email: "monicagellar@friends.com"}, 
+        { username: "Chandler", email: "chandlerbing@friends.com"}, 
+        { username: "Phoebe", email: "phoebebuffay@friends.com"}, 
+        { username: "Joey", email: "joeytribbiani@friends.com"}, 
+    ]); 
 
-    const thoughts = []; 
-    for (const user of users) {
-        const thought = await Thought.create({
-            username: user.username, 
-            thoughtText: genThought(), 
+    // const thoughts = []; 
+    // for (const user of users) {
+    //     const thought = await Thought.create({
+    //         username: user.username, 
+    //         thoughtText: genThought(), 
 
-        })
-        thoughts.push(thought); 
-    }; 
+    //     })
+    //     thoughts.push(thought); 
+    // }; 
 
 
-    for (const thought of thoughts) {
-        console.log(genReactions());
-        const th = await Thought.findOneAndUpdate(
-        { _id: thought._id }, 
-        { $addToSet: { reactions: { reactionBody: genReactions(), username: users[0] } } }, 
-        { runValidators: true, new: true } 
-        )
-        console.log(th); 
-    }
+//     for (const thought of thoughts) {
+//         console.log(genReactions());
+//         const th = await Thought.findOneAndUpdate(
+//         { _id: thought._id }, 
+//         { $addToSet: { reactions: { reactionBody: genReactions(), username: users[0] } } }, 
+//         { runValidators: true, new: true } 
+//         )
+//         console.log(th); 
+//     }
 
 }); 
