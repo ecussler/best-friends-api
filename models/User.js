@@ -16,12 +16,14 @@ const userSchema = new Schema({
     },
     thoughts: [
         {
+            // Imports Thought schema
             type: Schema.Types.ObjectId, 
             ref: 'thought', 
         },
     ],
     friends: [
         {
+            // Calls User schema, self-reference
             type: Schema.Types.ObjectId, 
             ref: 'user', 
         }

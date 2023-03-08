@@ -1,3 +1,8 @@
+//
+// Attempted to seed data for users, thoughts, and reactions but was not able to get it to work fully; will revisit later. 
+//
+
+
 const connection = require('../config/connection'); 
 const { User, Thought } = require('../models'); 
 const { genRandomIndex, genThought, genReactions, genFriends, seedUsers } = require('./data'); 

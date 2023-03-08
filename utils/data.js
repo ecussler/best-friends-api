@@ -1,3 +1,8 @@
+//
+// Attempted to seed data for users, thoughts, and reactions but was not able to get it to work fully; will revisit later. 
+//
+
+
 // const names = [
 //     'Aaran',
 //     'Aaren',
@@ -94,14 +99,6 @@ const possibleThoughts = [
     'I hate Sundays', 
   ]; 
 
-// const possibleReactions = [
-//     'Like', 
-//     'Dislike', 
-//     'Love', 
-//     'Angry', 
-//     'Sad', 
-//     'Laugh'
-//   ]; 
   
 const genRandomIndex = (array) => Math.floor(Math.random() * array.length); 
 
