@@ -28,6 +28,9 @@
   ## Usage
   This application is not a deployed site and run through the terminal. To start the application, first install the dependencies then run npm start in the terminal.
 
+  [![Watch the video](./assets/Screen%20Shot%202023-03-30%20at%202.50.14%20PM.png)](https://youtu.be/r0t2CpkoPuk)
+
+
   ## Contribution
   There is not contribution at this time.  
 
